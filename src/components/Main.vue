@@ -7,14 +7,19 @@
    import {store} from '../data/store';
 
    export default {
-   components:{
-      Card
-    },
+      components:{
+         Card
+      },
 
-    data(){
-      store
-    },
+      data(){
+         return{
+            store
+         }
+      },
 
+      mounted(){
+         console.log(this.store.cardsListArray)
+      }
 
    };
 </script>
@@ -23,8 +28,12 @@
 
 <!-- HTML -->
 <template>
-  
-  <Card />
+
+   <div class="container  mt-5">
+      <div class="row  row-cols-4">
+         <Card v-for="card in this.store.cardsListArray" :key="card.id" />
+      </div>
+   </div>
     
 </template>
 

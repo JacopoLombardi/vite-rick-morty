@@ -21,11 +21,11 @@ import {store} from './data/store';
 
     methods:{
       getApi(){
-        console.log(this.store.apiUrl);
         axios.get(this.store.apiUrl)
 
         .then(result => {
-          console.log(result.data)
+          this.store.cardsListArray = result.data.results;
+          console.log(this.store.cardsListArray)
         })
       } 
     },

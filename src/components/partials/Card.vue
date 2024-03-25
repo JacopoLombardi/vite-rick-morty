@@ -11,7 +11,10 @@
 
 <!-- HTML -->
 <template>
-  
+
+   <div class="border  m-2">
+      card
+   </div>
     
 </template>
 
