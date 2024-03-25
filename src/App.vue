@@ -44,7 +44,6 @@ import {store} from './data/store';
   <Header />
 
   <Main />
-
     
 </template>
 

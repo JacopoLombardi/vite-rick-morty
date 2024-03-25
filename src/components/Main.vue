@@ -16,11 +16,6 @@
             store
          }
       },
-
-      mounted(){
-         console.log(this.store.cardsListArray)
-      }
-
    };
 </script>
 

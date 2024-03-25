@@ -18,12 +18,12 @@
 <!-- HTML -->
 <template>
 
-   <div class="card border  m-3">
+   <div class="card border  rounded-5  m-3">
 
-      <img class="rounded-5" :src="image" :alt="name">
+      <img class="rounded-5  shadow" :src="image" :alt="name">
 
       <div class="card-body">
-         <h4 class="card-title">{{ name }}</h4>
+         <h4 class="card-title  fw-bolder">{{ name }}</h4>
          <hr>
          <h5 class="text-start">-{{ species }}</h5>
          <h5 class="text-start">-{{ status }}</h5>

@@ -14,7 +14,8 @@
    <header>
 
       <div>
-         <h1>title</h1>
+         <h1>Rick & Morty</h1>
+         <hr>
       </div>
 
    </header>
