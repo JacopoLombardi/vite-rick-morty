@@ -30,8 +30,17 @@
 <template>
 
    <div class="container  mt-5">
-      <div class="row  row-cols-4">
-         <Card v-for="card in this.store.cardsListArray" :key="card.id" />
+      <div class="row  d-flex  justify-content-center  row-cols-4">
+         
+         <Card 
+            v-for="card in this.store.cardsListArray" 
+            :key="card.id"
+            :image="card.image"
+            :name="card.name"
+            :species="card.species"
+            :status="card.status"
+         />
+
       </div>
    </div>
     

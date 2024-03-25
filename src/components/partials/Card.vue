@@ -3,6 +3,12 @@
 <!-- Javascript -->
 <script>
    export default {
+      props:{
+         image: String,
+         name: String,
+         species: String,
+         status: String,
+      }
       
    };
 </script>
@@ -12,8 +18,16 @@
 <!-- HTML -->
 <template>
 
-   <div class="border  m-2">
-      card
+   <div class="card border  m-3">
+
+      <img class="rounded-5" :src="image" :alt="name">
+
+      <div class="card-body">
+         <h4 class="card-title">{{ name }}</h4>
+         <hr>
+         <h5 class="text-start">-{{ species }}</h5>
+         <h5 class="text-start">-{{ status }}</h5>
+      </div>
    </div>
     
 </template>
