@@ -26,8 +26,12 @@ import {store} from './data/store';
         .then(result => {
           this.store.cardsListArray = result.data.results;
           console.log(this.store.cardsListArray)
+          
+          this.store.nameArray = result.data.results.map(item => item.name);
+          console.log(this.store.nameArray)
         })
-      } 
+      },
+      
     },
 
     mounted(){
