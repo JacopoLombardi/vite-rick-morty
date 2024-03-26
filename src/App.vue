@@ -30,6 +30,15 @@ import {store} from './data/store';
           
           // ottengo un array con soltanto i nomi dei personaggi
           this.store.nameArray = result.data.results.map(item => item.name);
+
+          // ottengo un array con soltanto le specie dei personaggi
+          result.data.results.map(item => {
+            if(!this.store.speciesArray.includes(item.species)){
+            this.store.speciesArray.push(item.species)
+            }
+          });
+          
+          console.log(this.store.speciesArray)
         })
       },
 
@@ -38,7 +47,7 @@ import {store} from './data/store';
       getNameApi(){
         axios.get(this.store.apiUrl, {
           params:{
-            name: this.store.searchName
+            name: this.store.searchName,
           }
         })
         

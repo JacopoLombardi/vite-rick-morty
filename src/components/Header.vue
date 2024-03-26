@@ -12,7 +12,7 @@
          }   
       },
       methods:{
-         search(){
+         search(name, specie){
             if(this.store.nameArray.includes(this.searchName) || this.searchName.length === 0){
                this.store.errorString = ''
                this.store.searchName = this.searchName
@@ -21,7 +21,15 @@
                this.store.errorString = 'Nessun elemento corrispondente trovato'
                this.store.cardsListArray = []
             }
-         }
+
+            console.log(name, specie)
+
+
+
+
+         },
+
+        
       }
 
    };
@@ -38,26 +46,55 @@
          <hr>
       </div>
 
-      <label for="exampleDataList" class="form-label  mt-5">Search name</label>
+      <div class="d-flex  mt-5">
+         
+         <!-- ricerca per nome -->
+         <div class="d-flex  flex-column  col-4  me-5">
+            <h4>Nome</h4>
 
-      <input
-        v-model="searchName"
-        @keyup.enter="search"
-        class="form-control"
-        list="datalistOptions"
-        id="exampleDataList"
-        placeholder="Nome Personaggio"
-      >
+            <input
+            v-model="searchName"
+            @keyup.enter="search"
+            class="form-control"
+            list="datalistOptions"
+            placeholder="Nome Personaggio"
+            >
 
-      <datalist id="datalistOptions">
+            <datalist id="datalistOptions">
+               <option
+               v-for="(name, i) in this.store.nameArray"
+               :key="i"
+               :value="name"
+               ></option>
+            </datalist>
+         </div>
 
-         <option
-         v-for="(name, i) in this.store.nameArray"
-         :key="i"
-         :value="name"
-         ></option>
+         <!-- ricerca per specie -->
+         <div class="col-3">
+            <h4>Specie</h4>
 
-      </datalist>
+            <select class="form-select" aria-label="Default select example">
+               <option selected>Specie Personaggio</option>
+               <option
+                 v-for="(specie, i) in this.store.speciesArray"
+                 :key="i"
+                 :value="i"
+                 @keyup.enter="specieClicked(specie)"
+               >{{ specie }}
+               </option>
+            </select>
+         </div>
+
+         <!-- btn Cerca -->
+         <div class="d-flex  align-items-end  ms-5">
+            <button
+              @click="search"
+              class="btn  btn-primary  fw-semibold"
+            >Cerca
+            </button>
+         </div>
+
+      </div>
 
       <h2 class="text-danger mt-5">{{ store.errorString }}</h2>
 
