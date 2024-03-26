@@ -41,12 +41,10 @@ import {store} from './data/store';
           }
         })
         
-          .then(result => {
-            this.store.cardsListArray = []
-            this.store.cardsListArray = result.data.results
-          })
-        
-        
+        .then(result => {
+          this.store.cardsListArray = []
+          this.store.cardsListArray = result.data.results
+        })
       }
       
     },

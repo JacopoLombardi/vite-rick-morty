@@ -13,11 +13,16 @@
       },
       methods:{
          search(){
-            this.store.searchName = this.searchName
-            this.$emit('search')
+            if(this.store.nameArray.includes(this.searchName)){
+               this.store.errorString = ''
+               this.store.searchName = this.searchName
+               this.$emit('search')
+            }else{
+               this.store.errorString = 'Nessun elemento corrispondente trovato'
+               this.store.cardsListArray = []
+            }
          }
       }
-
 
    };
 </script>
@@ -53,6 +58,8 @@
          ></option>
 
       </datalist>
+      
+      <h2 class="text-danger mt-5">{{ store.errorString }}</h2>
 
    </header>
 </template>
