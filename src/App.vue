@@ -39,7 +39,13 @@ import {store} from './data/store';
           params:{
             name: this.store.searchName
           }
-        });
+        })
+        
+          .then(result => {
+            this.store.cardsListArray = []
+            this.store.cardsListArray = result.data.results
+          })
+        
         
       }
       

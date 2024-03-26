@@ -13,7 +13,6 @@
       },
       methods:{
          search(){
-            console.log('ciao')
             this.store.searchName = this.searchName
             this.$emit('search')
          }
