@@ -20,20 +20,21 @@ import {store} from './data/store';
     },
 
     methods:{
+      // Chiamata API iniziale
       getApi(){
         axios.get(this.store.apiUrl)
 
         .then(result => {
           // ottengo l'array di oggetti completo
           this.store.cardsListArray = result.data.results;
-          console.log(this.store.cardsListArray)
           
           // ottengo un array con soltanto i nomi dei personaggi
           this.store.nameArray = result.data.results.map(item => item.name);
-          console.log(this.store.nameArray)
         })
       },
 
+
+      // chiamata API per ricerca
       getNameApi(){
         axios.get(this.store.apiUrl, {
           params:{

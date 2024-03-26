@@ -13,7 +13,7 @@
       },
       methods:{
          search(){
-            if(this.store.nameArray.includes(this.searchName)){
+            if(this.store.nameArray.includes(this.searchName) || this.searchName.length === 0){
                this.store.errorString = ''
                this.store.searchName = this.searchName
                this.$emit('search')
@@ -58,7 +58,7 @@
          ></option>
 
       </datalist>
-      
+
       <h2 class="text-danger mt-5">{{ store.errorString }}</h2>
 
    </header>
