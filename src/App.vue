@@ -24,13 +24,24 @@ import {store} from './data/store';
         axios.get(this.store.apiUrl)
 
         .then(result => {
+          // ottengo l'array di oggetti completo
           this.store.cardsListArray = result.data.results;
           console.log(this.store.cardsListArray)
           
+          // ottengo un array con soltanto i nomi dei personaggi
           this.store.nameArray = result.data.results.map(item => item.name);
           console.log(this.store.nameArray)
         })
       },
+
+      getNameApi(){
+        axios.get(this.store.apiUrl, {
+          params:{
+            name: this.store.searchName
+          }
+        });
+        
+      }
       
     },
 
@@ -45,7 +56,7 @@ import {store} from './data/store';
 <!-- HTML -->
 <template>
 
-  <Header />
+  <Header @search="getNameApi" />
 
   <Main />
     

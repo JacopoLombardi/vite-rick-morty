@@ -7,9 +7,17 @@
    export default {
       data(){
          return{
-            store
+            store,
+            searchName: ''
          }   
       },
+      methods:{
+         search(){
+            console.log('ciao')
+            this.store.searchName = this.searchName
+            this.$emit('search')
+         }
+      }
 
 
    };
@@ -27,13 +35,24 @@
       </div>
 
       <label for="exampleDataList" class="form-label  mt-5">Search name</label>
-      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nome Personaggio">
+
+      <input
+        v-model="searchName"
+        @keyup.enter="search"
+        class="form-control"
+        list="datalistOptions"
+        id="exampleDataList"
+        placeholder="Nome Personaggio"
+      >
+
       <datalist id="datalistOptions">
-      <option
-        v-for="(name, i) in this.store.nameArray"
-        :key="i"
-        :value="name"
-      ></option>
+
+         <option
+         v-for="(name, i) in this.store.nameArray"
+         :key="i"
+         :value="name"
+         ></option>
+
       </datalist>
 
    </header>
