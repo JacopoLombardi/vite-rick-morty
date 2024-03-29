@@ -7,5 +7,6 @@ export const store = reactive({
    nameArray: [],
    speciesArray: [],
    searchName: '',
+   searchSpecies: '',
    errorString: ''
 });
