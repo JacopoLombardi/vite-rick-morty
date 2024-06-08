@@ -9,7 +9,6 @@
          species: String,
          status: String,
       }
-      
    };
 </script>
 
@@ -19,7 +18,6 @@
 <template>
 
    <div class="card border  rounded-5  m-3">
-
       <img class="rounded-5  shadow" :src="image" :alt="name">
 
       <div class="card-body">

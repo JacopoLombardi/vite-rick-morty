@@ -35,11 +35,8 @@
                this.store.errorString = 'Nessun elemento corrispondente trovato'
                this.store.cardsListArray = []
             }
-
          },
-        
       }
-
    };
 </script>
 
@@ -54,9 +51,8 @@
          <hr>
       </div>
 
-      <div class="d-flex  mt-5">
+      <div class="d-flex justify-content-center mt-5">
          
-
          <!-- ricerca per nome -->
          <div class="d-flex  flex-column  col-4  me-5">
             <h4>Nome</h4>

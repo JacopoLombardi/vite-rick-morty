@@ -37,7 +37,6 @@ import {store} from './data/store';
             this.store.speciesArray.push(item.species)
             }
           });
-
         })
       },
 
@@ -50,13 +49,11 @@ import {store} from './data/store';
             species: this.store.searchSpecies
           }
         })
-        
         .then(result => {
           this.store.cardsListArray = []
           this.store.cardsListArray = result.data.results 
         })
       }
-      
     },
 
     mounted(){
